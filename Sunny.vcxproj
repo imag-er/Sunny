@@ -128,17 +128,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="Dialog.h" />
+    <ClInclude Include="application.h" />
+    <ClInclude Include="dialog.h" />
+    <ClInclude Include="information_stream.h" />
     <ClInclude Include="internal_window_process.h" />
-    <ClInclude Include="MessageDispatcher.h" />
+    <ClInclude Include="message_dispatcher.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="Dialog.cpp" />
+    <ClCompile Include="application.cpp" />
+    <ClCompile Include="dialog.cpp" />
+    <ClCompile Include="information_stream.cpp" />
     <ClCompile Include="internal_window_process.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MessageDispatcher.cpp" />
+    <ClCompile Include="message_dispatcher.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
