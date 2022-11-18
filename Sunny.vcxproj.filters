@@ -13,41 +13,38 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{5bfbefe0-5987-46d9-bafe-e8152b8b71d2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="message_dispatcher.h">
+    <ClInclude Include="information_stream.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="internal_window_process.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="dialog.h">
+    <ClInclude Include="widget.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="application.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="information_stream.h">
+    <ClInclude Include="dialog_manager.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="message_dispatcher.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="dialog.cpp">
+    <ClCompile Include="information_stream.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="widget.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="application.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="internal_window_process.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="information_stream.cpp">
+    <ClCompile Include="dialog_manager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

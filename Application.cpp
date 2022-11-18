@@ -1,45 +1,21 @@
-﻿#include "Application.h"
-#include "Dialog.h"
-#include <fmt/core.h>
-#include <iostream>
+﻿#include "application.h"
+#include "dialog_manager.h"
+#include "information_stream.h"
 application* application::obj = nullptr;
 
-application* application::get_instance( )
+application::application( ) :
+	widget(nullptr ) , hInstance(::GetModuleHandleW(0))
+{
+	isout.init( );
+	isout << "输出流测试" << iss::n;
+}
+application* application::instance( )
 {
 	if ( obj == nullptr )
-		obj = new application( );
-
-	return obj;
-}
-
-void application::add_node( HWND hWnd_ ,dialog* dialog_)
-{
-	obj->handle_to_Dialog[ hWnd_ ] = dialog_;
-}
-
-dialog* application::get_node( HWND hWnd_)
-{
-	return obj->handle_to_Dialog[ hWnd_ ];
-}
-
-uint32_t application::exec( )
-{
-	
-	std::cout << "msgloop thread id:" << std::this_thread::get_id( ) << std::endl;
-	MSG msg{0};
-	while ( msg.message != WM_QUIT )
 	{
-		if ( PeekMessageW( &msg , NULL , 0 , 0 , PM_REMOVE ) )
-		{
-			TranslateMessage( &msg );
-			DispatchMessageW( &msg );
-		}
-		Sleep( 50 );
+		obj = new application( );
+		obj->dm = new dialog_manager( obj );
+		obj->dm->init( );
 	}
-	return msg.wParam;
-}
-
-application::application( )
-{
-	 
+	return obj;
 }

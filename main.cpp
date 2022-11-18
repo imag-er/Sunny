@@ -1,12 +1,15 @@
 ﻿#define WIN32_LEAN_AND_MEAN
 #define _CRT_SECURE_NO_WARNINGS
+#pragma warning(disable:6031)
+#pragma warning(disable:6285)
+
 #include "application.h"
 #include "information_stream.h"
-#include "dialog.h"
 #include <iostream>
 #include <tchar.h>
-#include <WinBase.h>
-
+#include <Windows.h>
+#include "widget.h"
+#include "dialog_manager.h"
 INT WINAPI WinMain(
 	_In_ HINSTANCE hInstance ,
 	_In_opt_ HINSTANCE hPrevInstance ,
@@ -14,17 +17,12 @@ INT WINAPI WinMain(
 	_In_ int nShowCmd
 )
 {
-	application* app = application::get_instance( );
-	app->hInstance = hInstance;
+	auto app = application::instance( );
 
-	isout.init( );
-	isout << "输出流测试" << 1 << 1.0 << iss::n;
+	widget* w1 = new widget( nullptr );
+	widget* w2 = new widget( w1 );
 
-	dialog d1(L"window1" );
-	d1.make( );
+	w1->remove_child( w2 );
 
-	dialog d2(L"window2" );
-	d2.make( );
-
-	return app->exec( );
+	return app->dm->msg_loop();
 }
